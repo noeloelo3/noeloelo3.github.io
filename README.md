@@ -14,14 +14,22 @@
 <main>
     <div id="lewo">
         <article>
-            <h2>artikil</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime eaque, reprehenderit aut amet a dolores nemo incidunt tenetur voluptas cupiditate laudantium nisi eum asperiores explicabo aliquid minima laborum distinctio, esse odit, eos repellat iure ipsam possimus quasi! Eum cumque nisi vero, recusandae voluptas ullam? Consequatur, consectetur ipsam tenetur eius saepe cupiditate voluptatum nesciunt, voluptate beatae porro autem molestiae voluptatibus nulla.</p>
-            <blockquote>
+            <div id="licznik">
+                <h2>licznik</h2>
+                <p id="liczby"><b>0</b></p>
+                <button id="plus">plus</button>
+                <button id="minus">minus</button>
+                <button id="reset">reset</button>
+            </div>
+            <blockquote id="jeden">
                 alejaja
             </blockquote>
-            <h2>articil</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error atque et necessitatibus, voluptatem porro veniam eaque voluptatibus nihil exercitationem? Tempora blanditiis odio eum pariatur. Nihil assumenda ipsa porro placeat iusto, asperiores, quod qui, sequi dignissimos adipisci aliquid sint obcaecati sapiente!
-            </p>
+            <h2>haslo</h2>
+            <form>
+                <input id="has1" type="password">
+                <input id="has2" type="password">
+            </form>
+            <ul></ul>
 
         </article>
         <footer>
@@ -50,243 +58,96 @@
     </div>
 </main>
 
+<script>
+    const pier = document.querySelector('#jeden')
+    const nap = window.prompt("napisz cos ok")
+    pier.innerHTML = `<span>${nap}</span>`
+</script>
+<script>
+    window.alert("kolorki: red, green, blue, yellow, purple, nic-biale")
+const kolor = window.prompt("kolorek")
+
+
+const zmiana = document.querySelector("#jeden")
+
+switch (kolor) {
+    case 'red':
+        zmiana.style.backgroundColor = "red"
+        break
+    case 'green':
+        zmiana.style.backgroundColor = "green"
+        break
+    case 'blue':
+        zmiana.style.backgroundColor = "blue"
+        break
+    case 'yellow':
+        zmiana.style.backgroundColor = "yellow"
+        break
+    case 'purple':
+        zmiana.style.backgroundColor = "purple"
+        break
+    default:
+        zmiana.style.backgroundColor = "white"
+        break
+}
+</script>
+<script>
+    let liczba = 0
+const pls = document.querySelector('#plus')
+const mns = document.querySelector('#minus')
+const lcz = document.querySelector('#liczby')
+const rst = document.querySelector('#reset')
+
+
+function plus() {
+    lcz.innerHTML = `${++liczba}`
+    if (liczba > 0)
+        lcz.style.color = "green"
+    else if (liczba == 0)
+        lcz.style.color = "black"
+
+}
+pls.addEventListener('click', plus)
+
+function minus() {
+
+    lcz.innerHTML = `${--liczba}`
+    if (liczba < 0)
+        lcz.style.color = "red"
+    else if (liczba == 0)
+        lcz.style.color = "black"
+
+}
+mns.addEventListener('click', minus)
+
+function reset() {
+    liczba = 0
+    lcz.innerHTML = 0
+    lcz.style.color = 'black'
+
+}
+rst.addEventListener('click', reset)
+</script>
+<script>
+    const h1 = document.querySelector('#has1')
+const h2 = document.querySelector('#has2')
+const span = document.querySelector('ul')
+
+function jaja() {
+    const c = h1.value === h2.value
+    if (c) {
+        span.innerHTML = "zgadza sie"
+        span.style.color = "green"
+    }
+    else {
+        span.innerHTML = "hasla roznia sie"
+        span.style.color = "red"
+    }
+}
+
+h2.addEventListener('input', jaja)
+</script>
+
 </body>
 </html>
-```
-
-```css
-body{
-    color: #FDFDFF;
-    border: 1px solid #444F5A;
-    display: flex;
-    flex-direction:column;
-    min-height: 100vh;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-header,footer{
-    background-color: #604D53;
-    border: 1px solid black;
-    font-style: italic;
-    box-sizing: border-box;
-}
-
-nav,blockquote{
-    background-color: #DB7F8E;
-    border: 1px solid black;
-    box-sizing: border-box;
-}
-
-aside{
-    background-color: #FFDBDA;
-    display: flex;
-    justify-content: flex-start;
-    flex-grow: 1;
-    
-}
-
-article{
-    background-color: #D5C5C8;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 1;
-}
-
-p{
-    color: black;
-    text-align:justify;
-    padding: 10px;
-}
-
- h2{
-    text-align: left;
-    margin: 0;
-    padding-left: 2vh;  
-    padding-top: 1vh;
-    color: black;
- }
-
-#lewo{
-   width: 100%;
-   display: flex;
-   flex-direction: column;
- 
-}
-
-#prawo{
-    width: 40%;
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-
-}
-
-main{
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-    
-
-}
-
-.jeden{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 900;
-    font-size: 300%;
-    border: 2px solid #DB7F8E ;
-    color: black;
-    text-align: center;
-    border-radius:15px;
-    box-sizing: border-box;
-}
-
-.dwa{
-    border: 2px solid #DB7F8E;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 900;
-    font-size: 300%;
-    color: black;
-    text-align: center;
-    border-radius:15px;
-    box-sizing: border-box;
-}
-
-
-aside{
-    display: flex;
-    flex-direction: column;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin: 0;
-    
-}
-
-#klocki{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
-#grupa1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#grupa2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.jeden{
-    margin: 10px;
-    width: 100px;
-    height: 300px;
-}
-
-.dwa{
-   margin: 10px;
-   width: 100px;
-   height: 150px;
-}
-
-#grupa1{
-    display: flex;
-    flex-direction: column;
-}
-
-#grupa2{
-    display: flex;
-    flex-direction: column-reverse;
-
-}
-
-blockquote{
-    margin: 0;
-    height: 10vh;
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.tedwa{
-    border-left: 1px solid white;  
-    height: 100%; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-}
-
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 150px;
-}
-
-a{
-    text-align: center;
-    text-decoration: none;
-    width: 100%;
-    height: 100%;
-    color: white;
-}
-
-#tenjeden{
-    height: 100%; 
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-}
-
-a:hover{
-    color: black;
-    background-color: #D5C5C8;
-    font-size: 25px;
-    transition: 0.3s;
-}
-
-header{
-    text-align: right;
-    padding-right: 50px;
-    height: 100px;
-}
-
-
-footer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100px;
-
-}
-
-blockquote::after{ 
-    content: '"';
-}
-
-blockquote::before{
-    content: '„';
-}
-
-
-.jeden:hover,.dwa:hover{
-    background-color: #DB7F8E;
-    color: white;
-    transition: 0.3s;
-    
-}
 ```
