@@ -28,6 +28,7 @@
             <form>
                 <input id="has1" type="password">
                 <input id="has2" type="password">
+                <button id="pszycisk" type="button" onclick="jaja()">jprdl</button>
             </form>
             <ul></ul>
 
@@ -129,15 +130,24 @@ function reset() {
 rst.addEventListener('click', reset)
 </script>
 <script>
-    const h1 = document.querySelector('#has1')
+const h1 = document.querySelector('#has1')
 const h2 = document.querySelector('#has2')
 const span = document.querySelector('ul')
 
 function jaja() {
     const c = h1.value === h2.value
+    const b = h1.value.length >= 8
     if (c) {
         span.innerHTML = "zgadza sie"
         span.style.color = "green"
+            if (b){
+            span.innerHTML = "okok"
+            span.style.color = "green"  
+            }  
+            else{
+                span.innerHTML = "musi byc 8znakow"
+                span.style.color = "red"
+            }
     }
     else {
         span.innerHTML = "hasla roznia sie"
@@ -145,7 +155,7 @@ function jaja() {
     }
 }
 
-h2.addEventListener('input', jaja)
+h2.addEventListener('input')
 </script>
 
 </body>
