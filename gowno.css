@@ -353,3 +353,26 @@ blockquote::before{
     transition: 0.3s;
     
 }
+
+
+form>#pszycisk{
+    background-color: pink;
+    width: 100px;
+    height: 40px;
+    border: none;
+    font-weight: 900;
+}
+
+form>#pszycisk:hover{
+    color: white;
+    font-weight: 100;
+    background-color: grey;
+    transition: 0.1s;
+    border-radius: 20%;
+}
+
+
+form>#pszycisk:active{
+    background-color: white;  
+    color: black; 
+}
