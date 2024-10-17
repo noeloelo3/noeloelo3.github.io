@@ -131,32 +131,32 @@ function reset() {
 rst.addEventListener('click', reset)
 </script>
 <script>
-const h1 = document.querySelector('#has1')
-const h2 = document.querySelector('#has2')
-const span = document.querySelector('ul')
-
+const h1 = document.querySelector('#has1');
+const h2 = document.querySelector('#has2');
+const span = document.querySelector('ul');  
+S
 function jaja() {
-    const c = h1.value === h2.value
-    const b = h1.value.length >= 8
-    if (c) {
-        span.innerHTML = "zgadza sie"
-        span.style.color = "green"
-            if (b){
-            span.innerHTML = "okok"
-            span.style.color = "green"  
-            }  
-            else{
-                span.innerHTML = "musi byc 8znakow"
-                span.style.color = "red"
-            }
-    }
-    else {
-        span.innerHTML = "hasla roznia sie"
-        span.style.color = "red"
+    const c = h1.value === h2.value;
+    const b = h1.value.length >= 8;
+    const a = h1.value === '' || h2.value === ''
+    
+    if (a) {
+        span.innerHTML = "cos tu pusciutko";
+        span.style.color = "red";
+    } 
+    else if (c) {  
+        if (b) {  
+            span.innerHTML = "dla mnie spoko";
+            span.style.color = "green";
+        } else {
+            span.innerHTML = "8znakow minimum";
+            span.style.color = "red";
+        }
+    } else {  
+        span.innerHTML = "takie samo musi byc";
+        span.style.color = "red";
     }
 }
-
-h2.addEventListener('input')
 </script>
 
 </body>
